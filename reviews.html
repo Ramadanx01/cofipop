@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CofiPop - Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body style="padding-top: 94px;">
+
+    <div id="navbar-placeholder"></div>
+
+    <script type="module" src="./js/script.js"></script>      <script type="module" src="./js/animations.js"></script> <script type="module" src="./js/logic.js"></script> <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // المسار الصحيح لملف navbar.html هو 'templates/navbar.html'
+            fetch('templates/navbar.html') 
+                .then(response => {
+                    if (!response.ok) { // لو فيه أي مشكلة في تحميل الملف (زي 404 Not Found)
+                        throw new Error('Network response was not ok ' + response.statusText + ' for ' + response.url);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // نحط محتوى الناف بار في الـ div المخصص
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                    
+
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+
+    <div class="background-images">
+        <img src="imags/cup coffee.png" alt="Coffee Cup" class="bg-center">
+        <img src="imags/bean coffee.png" alt="Scattered Coffee Beans" class="bg-full">
+    </div>
+
+    <section class="hero-section d-flex align-items-center justify-content-center text-white text-center" style="background: url('imags/pic1_about.jpg') no-repeat center center/cover; height: 40vh;">
+        <div class="container">
+            <h1 class="display-3 font-weight-bold animated fadeInDown">What Our Customers Say</h1>
+            <p class="lead animated fadeInUp">Share your CofiPop experience with us!</p>
+        </div>
+    </section>
+
+    <div class="main-content-wrapper">
+        <section class="reviews-display-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 text-brown">Customer Reviews</h2>
+                <div class="row" id="customer-reviews-list">
+                    <p class="col-12 text-center text-muted" id="no-reviews-message">No reviews yet. Be the first to share your experience!</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <section class="review-form-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="card shadow-lg rounded-lg p-4 p-md-5">
+                            <h2 class="text-center mb-4 text-brown">Leave a Review</h2>
+                            <form id="reviewForm">
+                                <div class="mb-3"> <label for="reviewerName" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control rounded-pill" id="reviewerName" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reviewerPhone" class="form-label">Your Phone Number (Optional, for verification)</label>
+                                    <input type="tel" class="form-control rounded-pill" id="reviewerPhone" placeholder="e.g., +1234567890">
+                                    <small class="form-text text-muted">Your phone number will only be visible to administrators for verification purposes.</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reviewStars" class="form-label">Rate Us</label>
+                                    <div class="rating" id="reviewStars">
+                                        <input type="radio" id="star5" name="rating" value="5" required /><label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reviewText" class="form-label">Your Review</label>
+                                    <textarea class="form-control rounded-lg" id="reviewText" rows="5" placeholder="Share your experience with CofiPop..." required></textarea>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">Submit Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div> <footer class="bg-body-tertiary py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 footer-nav">
+                    <h4 class="mb-3">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-dark footer-link"><span>Home</span></a></li>
+                        <li class="mb-2"><a href="products.html" class="text-decoration-none text-dark footer-link"><span>Products</span></a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-dark footer-link"><span>About</span></a></li>
+                        <li class="mb-2"><a href="menu.html" class="text-decoration-none text-dark footer-link"><span>Menu</span></a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none text-dark footer-link"><span>Contact</span></a></li>
+                        <li class="mb-2"><a href="reviews.html" class="text-decoration-none text-dark footer-link"><span>Reviews</span></a></li>
+                        <li class="mb-2"><a href="reservation.html" class="text-decoration-none text-dark footer-link"><span>Reservation</span></a></li>
+                        <li class="mb-2">
+                            <a href="custom-order.html" class="text-decoration-none text-dark footer-link d-flex align-items-center">
+                                <i class="ri-shopping-cart-fill me-2"></i><span>Order Custom Coffee</span>
+                            </a>
+                        </li>
+                        <li class="mb-2"><a href="login.html" class="text-decoration-none text-dark footer-link"><span>Account</span></a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark footer-link"><span>Cart</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-12 mb-4 footer-info">
+                    <h4 class="mb-3">About Info</h4>
+                    <p class="mb-3">"Crafting the perfect coffee experience, one cup at a time."</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="ri-map-pin-fill me-2"></i> 123 Coffee Street, Cafe City
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="ri-mail-fill me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2abaca4ad82a1ada4abb2adb2eca1adaf">[email&#160;protected]</a>
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="ri-phone-fill me-2"></i> +1 (123) 456-7890
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4 footer-social">
+                    <h4 class="mb-3">Follow Us On</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="ri-facebook-fill me-2"></i> Facebook
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="ri-twitter-fill me-2"></i> Twitter
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="ri-youtube-fill me-2"></i> YouTube
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="ri-instagram-fill me-2"></i> Instagram
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="ri-pinterest-fill me-2"></i> Pinterest
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="navbar-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popper./js/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/./js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // المسار الصحيح لملف navbar.html هو 'templates/navbar.html'
+            fetch('templates/navbar.html') 
+                .then(response => {
+                    if (!response.ok) { 
+                        throw new Error('Network response was not ok ' + response.statusText + ' for ' + response.url);
+                    }
+                    return response.text();
+                })
+
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+    
+    <script type="module" src="./js/logic.js"></script> 
+         
+    <script type="module" src="./js/script.js"></script> 
+    <script type="module" src="./js/animations.js"></script>
+</body>
+</html>

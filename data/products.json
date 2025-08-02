@@ -1,0 +1,113 @@
+[
+    {
+        "id": "prod1",
+        "name": "Espresso",
+        "description": "قهوة سوداء قوية",
+        "price": 3.50,
+        "category": "Coffee",
+        "image": "/image products/pic1.jpg"
+    },
+    {
+        "id": "prod2",
+        "name": "Latte",
+        "description": "إسبريسو مع حليب مبخر",
+        "price": 4.00,
+        "category": "Coffee",
+        "image": "/image products/pic1.jpg"
+    },
+    {
+        "id": "prod3",
+        "name": "Cappuccino",
+        "description": "إسبريسو، حليب مبخر، ورغوة",
+        "price": 4.25,
+        "category": "Coffee",
+        "image": "/image products/pic1.jpg"
+    },
+    {
+        "id": "prod4",
+        "name": "Americano",
+        "description": "إسبريسو مع ماء ساخن",
+        "price": 3.75,
+        "category": "Coffee",
+        "image": "images/products/pic4.jpg"
+    },
+    {
+        "id": "prod5",
+        "name": "Mocha",
+        "description": "إسبريسو، شوكولاتة، حليب مبخر، كريمة مخفوقة",
+        "price": 4.50,
+        "category": "Coffee",
+        "image": "/image products/pic1.jpg"
+    },
+    {
+        "id": "prod6",
+        "name": "Iced Coffee",
+        "description": "قهوة محضرة على البارد",
+        "price": 3.90,
+        "category": "Coffee",
+        "image": "/image products/pic1.jpg"
+    },
+    {
+        "id": "prod7",
+        "name": "Croissant",
+        "description": "معجنات هشة",
+        "price": 2.50,
+        "category": "Pastry",
+        "image": "images/products/pic7.jpg"
+    },
+    {
+        "id": "prod8",
+        "name": "Blueberry Muffin",
+        "description": "كعكة حلوة مع التوت الأزرق",
+        "price": 3.00,
+        "category": "Pastry",
+        "image": "images/products/pic8.jpg"
+    },
+    {
+        "id": "prod9",
+        "name": "Chocolate Donut",
+        "description": "دونات مغطاة بالشوكولاتة",
+        "price": 2.75,
+        "category": "Pastry",
+        "image": "images/products/pic9.jpg"
+    },
+    {
+        "id": "prod10",
+        "name": "Green Tea",
+        "description": "شاي أخضر منعش",
+        "price": 3.00,
+        "category": "Beverage",
+        "image": "images/products/pic10.jpg"
+    },
+    {
+        "id": "prod11",
+        "name": "Orange Juice",
+        "description": "عصير برتقال طبيعي",
+        "price": 3.25,
+        "category": "Beverage",
+        "image": "images/products/pic11.jpg"
+    },
+    {
+        "id": "prod12",
+        "name": "Cheesecake",
+        "description": "كعكة الجبن الغنية",
+        "price": 5.00,
+        "category": "Dessert",
+        "image": "images/products/pic12.jpg"
+    },
+    {
+        "id": "prod13",
+        "name": "Tiramisu",
+        "description": "حلوى إيطالية كلاسيكية",
+        "price": 5.50,
+        "category": "Dessert",
+        "image": "images/products/pic13.jpg"
+    },
+    {
+        "id": "prod14",
+        "description": "زجاجة مياه معدنية",
+        "price": 1.50,
+        "category": "Other",
+        "image": "images/products/pic14.jpg"
+    }
+]

@@ -1,0 +1,301 @@
+/* CSS Variables for Theme Consistency (Inspired by ThemeWagon Falcon) */
+:root {
+    --dark-brown: #3a2718; /* Dark coffee bean */
+    --medium-brown: #7b5e3d; /* Medium coffee */
+    --light-brown: #d38b5d; /* Light coffee */
+    --cream: #fff0d4; /* Warm cream */
+    --accent-gold: #cc9933; /* Caramel gold */
+    --accent-reddish-brown: #a34726; /* Roasted coffee */
+    --text-dark: #3a2718;
+    --text-light: #ffffff;
+    --border-light: #e6dbc9;
+    --input-bg: #f9f3e8;
+    --shadow-color: rgba(58, 39, 24, 0.15);
+    --body-bg-light-start: #fff8ea; /* Light background gradient start */
+    --body-bg-light-end: #f5edda; /* Light background gradient end */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, var(--body-bg-light-start), var(--body-bg-light-end));
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: var(--dark-brown);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-light) !important;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: var(--accent-gold) !important;
+}
+
+.sidebar {
+    background-color: var(--medium-brown);
+    padding-top: 20px;
+    height: 100vh; /* Full height sidebar */
+    position: fixed;
+    top: 0;
+    left: 0; /* LTR specific: Sidebar on the left */
+    width: 250px; /* Fixed width */
+    overflow-y: auto;
+    box-shadow: 2px 0 5px var(--shadow-color); /* Shadow on the right for LTR */
+}
+
+.sidebar .nav-link {
+    color: var(--cream) !important;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--light-brown);
+    color: var(--text-dark) !important;
+    font-weight: bold;
+}
+
+.sidebar .nav-link:hover:not(.active) {
+    background-color: var(--accent-gold);
+    color: var(--text-dark) !important;
+}
+
+.content-wrapper {
+    margin-left: 250px; /* Adjust content to accommodate sidebar on left for LTR */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    background-color: var(--cream);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: var(--light-brown);
+    color: var(--text-dark);
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-light);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    border-color: var(--border-light);
+    color: var(--text-dark);
+}
+
+.form-control:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 0.25rem rgba(204, 153, 51, 0.25); /* Accent gold with transparency */
+}
+
+.btn-primary {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--text-dark);
+}
+
+.btn-primary:hover {
+    background-color: #b3862b; /* Slightly darker gold */
+    border-color: #b3862b;
+}
+
+.btn-danger {
+    background-color: var(--accent-reddish-brown);
+    border-color: var(--accent-reddish-brown);
+}
+
+.btn-danger:hover {
+    background-color: #8c3b1f; /* Slightly darker reddish-brown */
+    border-color: #8c3b1f;
+}
+
+.table {
+    background-color: var(--cream);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners for table */
+}
+
+.table thead {
+    background-color: var(--light-brown);
+    color: var(--text-dark);
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f5eccf; /* Slightly darker cream for stripes */
+}
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Default for LTR */
+    z-index: 1080; /* Higher than Bootstrap modals */
+}
+
+.toast {
+    background-color: var(--dark-brown);
+    color: var(--text-light);
+    border: none;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.toast.bg-success { background-color: #28a745 !important; }
+.toast.bg-danger { background-color: #dc3545 !important; }
+.toast.bg-warning { background-color: #ffc107 !important; color: var(--text-dark) !important; }
+.toast.bg-info { background-color: #17a2b8 !important; }
+
+.toast-header {
+    background-color: var(--dark-brown);
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.toast-header strong {
+    color: var(--text-light);
+}
+
+.toast-header .btn-close {
+    filter: invert(1); /* Makes close button white */
+}
+
+/* Specific styles for dashboard cards */
+.dashboard-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.dashboard-card .card-title {
+    font-size: 1.25rem;
+    color: var(--medium-brown);
+    margin-bottom: 10px;
+}
+
+.dashboard-card .card-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-brown);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        left: auto; /* Reset for mobile */
+        box-shadow: 0 2px 5px var(--shadow-color);
+    }
+    .content-wrapper {
+        margin-left: 0;
+        padding-top: 10px;
+    }
+}
+
+/* RTL specific styles for dynamic switching - these would be applied by JS or a separate RTL CSS file */
+body[dir="rtl"] .sidebar {
+    left: auto;
+    right: 0;
+    box-shadow: -2px 0 5px var(--shadow-color);
+}
+
+body[dir="rtl"] .content-wrapper {
+    margin-left: 0;
+    margin-right: 250px;
+}
+
+body[dir="rtl"] .toast-container {
+    left: 20px; /* Toasts on the left for RTL */
+    right: auto;
+}
+
+/* --- Existing code above remains as-is --- */
+
+/* ✅ تحسينات إضافية احترافية */
+
+/* Active link indicator in sidebar */
+.sidebar .nav-link.active::before {
+    content: '➤';
+    color: var(--accent-gold);
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+/* Sidebar scroll bar styling */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--accent-gold);
+    border-radius: 4px;
+}
+.sidebar::-webkit-scrollbar-track {
+    background-color: var(--medium-brown);
+}
+
+/* Responsive image inside cards or modals */
+img.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Enhanced form spacing */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Modal header styles */
+.modal-header {
+    background-color: var(--light-brown);
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Modal footer */
+.modal-footer {
+    border-top: 1px solid var(--border-light);
+}
+
+/* Input placeholders color */
+::placeholder {
+    color: #b29b80;
+    opacity: 1;
+}
+
+/* Better transition effects */
+.nav-link, .btn, .form-control {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Enhanced buttons shadow */
+.btn-primary, .btn-danger {
+    box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+/* Hover scale for dashboard cards */
+.dashboard-card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+/* Toast smooth animation */
+.toast {
+    animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

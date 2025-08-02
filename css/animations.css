@@ -1,0 +1,204 @@
+/**
+ * Animations for CofiPop Website
+ */
+
+/* Navbar animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInStaggered {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Login/Register animations */
+@keyframes authContainerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Product card animations */
+@keyframes productFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Review animations */
+@keyframes reviewCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About page gallery animations */
+@keyframes imageFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Star glow animation */
+                                                       
+
+
+/* Background coffee beans animations */
+@keyframes floatBeans {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Coffee cup pulse animation */
+@keyframes cupPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.18;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.15;
+    }
+}
+
+/* Apply animations to elements */
+.navbar {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.navbar-nav .nav-item {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInStaggered 0.5s ease forwards;
+}
+
+.auth-container {
+    animation: authContainerAppear 0.8s ease-out forwards;
+}
+
+.auth-welcome-section {
+    animation: slideFromLeft 1.5s ease-in-out;
+}
+
+.auth-form-section {
+    animation: slideFromRight 1.5s ease-in-out;
+}
+
+.product-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: productFadeIn 0.6s ease forwards;
+    animation-delay: calc(var(--delay) + 0.2s);
+}
+
+.review-card {
+    animation: reviewCardAppear 0.5s ease forwards;
+    animation-delay: calc(var(--review-delay) * 0.1s);
+}
+
+.gallery-image {
+    opacity: 0;
+    animation: imageFadeIn 0.6s ease forwards;
+    animation-delay: calc(var(--image-delay) * 0.15s);
+}
+
+
+.bg-center {
+    animation: cupPulse 4s infinite ease-in-out;
+}
+
+.bg-full {
+    animation: floatBeans 20s infinite ease-in-out;
+}
+
+/* Media query for mobile animations */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        animation: slideInRight 0.3s ease-out forwards;
+    }
+}
+
+/* Login/Register slide animation classes */
+.slide-active .auth-welcome-section {
+    transform: translateX(100%);
+}
+
+.slide-active .auth-form-section {
+    transform: translateX(-100%);
+}
+
+/* Animation for notifications */
+.toast {
+    animation: slideInRight 0.3s ease-out forwards;
+}
+

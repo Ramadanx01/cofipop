@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CofiPop - Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <div class="background-images">
+        <img src="imags/cup coffee.png" alt="Coffee Cup" class="bg-center">
+        <img src="imags/bean coffee.png" alt="Scattered Coffee Beans" class="bg-full">
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <script type="module" src="./js/script.js"></script>      <script type="module" src="./js/animations.js"></script> <script type="module" src="./js/logic.js"></script> <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // المسار الصحيح لملف navbar.html هو 'templates/navbar.html'
+            fetch('templates/navbar.html') 
+                .then(response => {
+                    if (!response.ok) { // لو فيه أي مشكلة في تحميل الملف (زي 404 Not Found)
+                        throw new Error('Network response was not ok ' + response.statusText + ' for ' + response.url);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // نحط محتوى الناف بار في الـ div المخصص
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                    
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+
+
+    <section class="hero-section d-flex align-items-center justify-content-center text-white text-center" style="background: url('imags/pic1_about.jpg') no-repeat center center/cover; height: 50vh; position: relative; overflow: hidden;">
+        <div class="container position-relative z-1"> <h1 class="display-3 font-weight-bold animated fadeInDown mb-3">Get in Touch</h1>
+            <p class="lead animated fadeInUp">We'd love to hear from you!</p>
+        </div>
+    </section>
+
+    <div class="main-content-wrapper py-5">
+        <section class="contact-content-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <h2 class="text-brown mb-4">Visit Us</h2>
+                        <p class="lead">Find us at our cozy location:</p>
+                        <address>
+                            <strong>CofiPop Coffee Shop</strong><br>
+                            123 Coffee Lane<br>
+                            Brewtown, CA 90210<br>
+                            <i class="fas fa-phone me-2"></i> (123) 456-7890<br> <i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="88e1e6eee7c8ebe7eee1f8e7f8a6ebe7e5">[email&#160;protected]</a> </address>
+                        <h3 class="text-brown mt-4 mb-3">Hours of Operation</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-clock me-2"></i> Monday - Friday: 7:00 AM - 7:00 PM</li> <li><i class="fas fa-clock me-2"></i> Saturday - Sunday: 8:00 AM - 6:00 PM</li> </ul>
+                        <div class="social-icons mt-4">
+                            <a href="#" class="text-brown mx-2"><i class="fab fa-facebook-f fa-2x"></i></a>
+                            <a href="#" class="text-brown mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#" class="text-brown mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="#" class="text-brown mx-2"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <h2 class="text-brown mb-4">Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="mb-3"> <label for="contactName" class="form-label">Your Name</label> <input type="text" class="form-control rounded-pill" id="contactName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Your Email</label>
+                                <input type="email" class="form-control rounded-pill" id="contactEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control rounded-pill" id="contactSubject">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control rounded-lg" id="contactMessage" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h2 class="text-center text-brown mb-4">Find Us on the Map</h2>
+                        <div class="map-container rounded-lg shadow-lg" style="height: 400px; width: 100%;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.012579369231!2d31.23571161511233!3d30.044419981882853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458410e4dd31fdf%3A0x2d2cd6f680b170f6!2sTahrir%20Square!5e0!3m2!1sen!2seg!4v1695740034502!5m2!1sen!2seg"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-body-tertiary py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 footer-nav">
+                    <h4 class="mb-3">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-dark footer-link"><span>Home</span></a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-dark footer-link"><span>About</span></a></li>
+                        <li class="mb-2"><a href="menu.html" class="text-decoration-none text-dark footer-link"><span>Menu</span></a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none text-dark footer-link"><span>Contact</span></a></li>
+                        <li class="mb-2"><a href="reviews.html" class="text-decoration-none text-dark footer-link"><span>Reviews</span></a></li>
+                        <li class="mb-2"><a href="reservation.html" class="text-decoration-none text-dark footer-link"><span>Reservation</span></a></li>
+                        <li class="mb-2">
+                            <a href="custom-order.html" class="text-decoration-none text-dark footer-link d-flex align-items-center">
+                                <i class="fas fa-coffee me-2"></i><span>Custom Coffee</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-12 mb-4 footer-info">
+                    <h4 class="mb-3">About Info</h4>
+                    <p class="mb-3">"Crafting the perfect coffee experience, one cup at a time."</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt me-2"></i> 123 Coffee Street, Cafe City
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86efe8e0e9c6e5e9e0eff6e9f6a8e5e9eb">[email&#160;protected]</a>
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fas fa-phone me-2"></i> +1 (123) 456-7890
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4 footer-social">
+                    <h4 class="mb-3">Follow Us On</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-facebook-f me-2"></i> Facebook
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-twitter me-2"></i> Twitter
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-instagram me-2"></i> Instagram
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-pinterest me-2"></i> Pinterest
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-3 border-top">
+                <p>&copy; 2025 CofiPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="navbar-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/./js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // المسار الصحيح لملف navbar.html هو 'templates/navbar.html'
+            fetch('templates/navbar.html') 
+                .then(response => {
+                    if (!response.ok) { 
+                        throw new Error('Network response was not ok ' + response.statusText + ' for ' + response.url);
+                    }
+                    return response.text();
+                })
+
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+    
+    <script type="module" src="./js/logic.js"></script> 
+    <script type="module" src="./js/script.js"></script> 
+    <script type="module" src="./js/animations.js"></script>
+</body>
+</html>

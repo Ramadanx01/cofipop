@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CofiPop - Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style >
+        body.login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body class="login-page" style="margin-top: 50px;">
+    <div class="background-images">
+        <img src="imags/cup coffee.png" alt="Coffee Cup" class="bg-center">
+        <img src="imags/bean coffee.png" alt="Scattered Coffee Beans" class="bg-full">
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <script type="module" src="./js/script.js"></script>      <script type="module" src="./js/animations.js"></script> <script type="module" src="./js/logic.js"></script> <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // المسار الصحيح لملف navbar.html هو 'templates/navbar.html'
+            fetch('templates/navbar.html') 
+                .then(response => {
+                    if (!response.ok) { // لو فيه أي مشكلة في تحميل الملف (زي 404 Not Found)
+                        throw new Error('Network response was not ok ' + response.statusText + ' for ' + response.url);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // نحط محتوى الناف بار في الـ div المخصص
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                    
+
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+
+    <!-- Enhanced login container with animations -->
+    <div class="auth-container">
+        <div class="auth-form-section">
+            <div class="text-center mb-4">
+                <img src="logo/logo2.png" alt="CofiPop Logo" height="80" class="mb-3" loading="lazy">
+                <h3 class="form-title mb-0">Login to Your Account</h3>
+                <p class="text-muted">Enter your CofiPop profile</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group-custom mb-3">
+                    <input type="email" id="username" placeholder="Email / Username" required>
+                    <i class="fas fa-user icon-user"></i>
+                </div>
+                <div class="form-group-custom mb-3">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-lock icon-lock"></i>
+                </div>
+                <div class="text-start mb-3">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary-auth">Login</button>
+            </form>
+        </div>
+
+        <div class="auth-welcome-section">
+            <h2 class="welcome-heading">Welcome Back!</h2>
+            <p class="welcome-text">If you don't have an account yet, you can create one now.</p>
+            <button class="btn btn-secondary-auth" onclick="location.href='register.html'">Register Now</button>
+        </div>
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popper./js/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // المسار الصحيح لملف navbar.html هو 'templates/navbar.html'
+            fetch('templates/navbar.html') 
+                .then(response => {
+                    if (!response.ok) { 
+                        throw new Error('Network response was not ok ' + response.statusText + ' for ' + response.url);
+                    }
+                    return response.text();
+                })
+
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+    
+    <script type="module" src="./js/logic.js"></script> 
+         
+    <script type="module" src="./js/script.js"></script> 
+    <script type="module" src="./js/animations.js"></script>
+</body>
+</html>

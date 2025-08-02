@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CofiPop - Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <div class="background-images">
+        <img src="imags/cup coffee.png" alt="Coffee Cup" class="bg-center">
+        <img src="imags/bean coffee.png" alt="Scattered Coffee Beans" class="bg-full">
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+
+
+    <section class="hero-section d-flex align-items-center justify-content-center text-white text-center" style="background: url('imags/pic5_about.jpg') no-repeat center center/cover; height: 50vh; position: relative; overflow: hidden;">
+        <div class="container position-relative z-1"> <h1 class="display-3 font-weight-bold animated fadeInDown mb-3">Craft Your Coffee</h1>
+            <p class="lead animated fadeInUp">Tell us your perfect coffee creation.</p>
+        </div>
+        </section>
+
+    <div class="main-content-wrapper py-5">
+        <section class="custom-order-form-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="card shadow-lg rounded-lg p-4 p-md-5">
+                            <h2 class="text-center mb-4 text-brown">Create Your Unique Drink</h2>
+                            <form id="customOrderForm">
+                                <div class="mb-3"> <label for="coffeeType" class="form-label">Coffee Type / Base Drink</label> <input type="text" class="form-control rounded-pill" id="coffeeType" placeholder="e.g., Latte, Cappuccino, Cold Brew" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ingredients" class="form-label">Specific Ingredients / Flavors</label>
+                                    <textarea class="form-control rounded-lg" id="ingredients" rows="3" placeholder="e.g., Extra shot, Vanilla syrup, Oat milk, Caramel drizzle"></textarea>
+                                    <small class="form-text text-muted">Separate ingredients with commas.</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="notes" class="form-label">Special Instructions / Notes</label>
+                                    <textarea class="form-control rounded-lg" id="notes" rows="3" placeholder="e.g., Less sweet, Extra hot, Decaf, With ice"></textarea>
+                                </div>
+                                <hr class="my-4">
+                                <h5 class="text-brown mb-3">Your Contact Information</h5>
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control rounded-pill" id="fullName" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactInfo" class="form-label">Email or Phone Number</label> <input type="text" class="form-control rounded-pill" id="contactInfo" placeholder="e.g., your@email.com or +1234567890" required>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">Submit Custom Order</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-body-tertiary py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 footer-nav">
+                    <h4 class="mb-3">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-dark footer-link"><span>Home</span></a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-dark footer-link"><span>About</span></a></li>
+                        <li class="mb-2"><a href="menu.html" class="text-decoration-none text-dark footer-link"><span>Menu</span></a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none text-dark footer-link"><span>Contact</span></a></li>
+                        <li class="mb-2"><a href="reviews.html" class="text-decoration-none text-dark footer-link"><span>Reviews</span></a></li>
+                        <li class="mb-2"><a href="reservation.html" class="text-decoration-none text-dark footer-link"><span>Reservation</span></a></li>
+                        <li class="mb-2">
+                            <a href="custom-order.html" class="text-decoration-none text-dark footer-link d-flex align-items-center">
+                                <i class="fas fa-coffee me-2"></i><span>Custom Coffee</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-12 mb-4 footer-info">
+                    <h4 class="mb-3">About Info</h4>
+                    <p class="mb-3">"Crafting the perfect coffee experience, one cup at a time."</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt me-2"></i> 123 Coffee Street, Cafe City
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fas fa-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86efe8e0e9c6e5e9e0eff6e9f6a8e5e9eb">[email&#160;protected]</a>
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fas fa-phone me-2"></i> +1 (123) 456-7890
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4 footer-social">
+                    <h4 class="mb-3">Follow Us On</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-facebook-f me-2"></i> Facebook
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-twitter me-2"></i> Twitter
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-instagram me-2"></i> Instagram
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-dark d-flex align-items-center">
+                                <i class="fab fa-pinterest me-2"></i> Pinterest
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-3 border-top">
+                <p>&copy; 2025 CofiPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="navbar-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popper./js/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/./js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script type="module" src="./js/script.js"></script>      <script type="module" src="./js/animations.js"></script> <script type="module" src="./js/logic.js"></script> <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // المسار الصحيح لملف navbar.html هو 'templates/navbar.html'
+            fetch('templates/navbar.html') 
+                .then(response => {
+                    if (!response.ok) { // لو فيه أي مشكلة في تحميل الملف (زي 404 Not Found)
+                        throw new Error('Network response was not ok ' + response.statusText + ' for ' + response.url);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // نحط محتوى الناف بار في الـ div المخصص
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                    
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+    
+    <script type="module" src="./js/logic.js"></script> 
+    <script type="module" src="./js/script.js"></script> 
+    <script type="module" src="./js/animations.js"></script>
+</body>
+</html>

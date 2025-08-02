@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CofiPop Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <h1 class="mb-4">Main Dashboard</h1>
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-coffee me-2"></i> Total Products</h5>
+                            <p class="card-text" id="totalProducts">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-book me-2"></i> Total Reservations</h5>
+                            <p class="card-text" id="totalReservations">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-star me-2"></i> Total Reviews</h5>
+                            <p class="card-text" id="totalReviews">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Latest Reservations
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Customer</th>
+                                            <th>Reservation Date</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="latestReservationsTableBody">
+                                        <tr><td colspan="4" class="text-center">No reservations to display.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="reservations.html" class="btn btn-link float-end">View All Reservations <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Latest Reviews
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Customer</th>
+                                            <th>Review</th>
+                                            <th>Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="latestReviewsTableBody">
+                                        <tr><td colspan="4" class="text-center">No reviews to display.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="reviews.html" class="btn btn-link float-end">View All Reviews <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-placeholder"></div>
+
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <script src="js/common.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Client-side includes for development convenience
+        // In a production environment, use server-side includes or a templating engine
+        fetch('includes/navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navbar-placeholder').innerHTML = html;
+                // Add active class to current nav link
+                const currentPath = window.location.pathname.split('/').pop();
+                const navLink = document.querySelector(`.sidebar .nav-link[href="${currentPath}"]`);
+                if (navLink) {
+                    navLink.classList.add('active');
+                }
+            });
+        fetch('includes/toast.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('toast-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
